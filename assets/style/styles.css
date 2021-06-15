@@ -1,4 +1,22 @@
+* {
+  font-family: "Russo one";
+}
+
 body {
   text-align: center;
-  background-color: rgba(80, 10, 10, 0.817);
+  margin-top: 5vw;
+  /*background-image: url(../images/bg.jpeg);*/
+  background-color: rgba(28, 26, 26, 0.482);
+  font-family: "Russo One", sans-serif;
 }
+
+canvas {
+  border: solid 1px rgb(152, 55, 55);
+}
+
+/* #start-button {
+  height: 100px;
+  width: 200px;
+  font-size: 20px;
+  background-color: rgb(126, 74, 74);
+} */
