@@ -60,6 +60,8 @@ class BackgroundImage extends Objects {
 class Invaders extends Objects {
   constructor(x, y, width, height, img) {
     super(x, y, width, height, img);
+    this.speedX = 1;
+    this.speedY = 1;
   }
   draw() {
     ctx.drawImage(this.img, this.x, this.y, this.width, this.height);

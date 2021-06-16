@@ -24,8 +24,20 @@ gotinha.src = "./images/zegotinha.png";
 const shoot = new Image();
 shoot.src = "./images/shoot.png";
 
+const sound = new Audio();
+sound.src = "./sounds/Medicine.mp3";
+sound.volume = 0.1;
+
+const audioShoot = new Audio();
+audioShoot.src = "./sounds/shoot.ogg";
+audioShoot.volume = 0.1;
+
+const audioExplosion = new Audio();
+audioExplosion.src = "./sounds/explosion.wav";
+audioExplosion.volume = 0.1;
+
 const imagesInvas = [inva1, inva2, inva3];
-const font = "Russo one";
+const font = "DotGothic16";
 
 // eventos
 function startGame() {
@@ -36,7 +48,8 @@ function startGame() {
     canvas.height,
     bgImg
   );
-  const player = new Objects(400, 490, 130, 60, shipSy);
+
+  const player = new Objects(400, 490, 120, 60, shipSy);
 
   const game = new Game(backgroundImage, player);
 
@@ -48,8 +61,10 @@ function startGame() {
     } else if (event.code === "ArrowRight") {
       game.player.speedX = 3;
     } else if (event.code === "Space") {
-      let shooti = new Shooter(player.x + 60, player.y, 20, 20, shoot);
+      audioShoot.play();
+      let shooti = new Shooter(player.x + 60, player.y, 10, 20, shoot);
       shooti.speedY -= 2;
+
       game.shoots.push(shooti);
     }
   });
@@ -58,17 +73,36 @@ function startGame() {
     game.player.speedX = 0;
   });
 }
-function startScreen() {
-  this.ctx.font = "20px Russo one";
-  this.ctx.fillStyle = "black";
-  this.ctx.fillText("hello world", 400, 400);
-  this.ctx.draw();
+function draw() {
+  ctx.font = "70px DotGothic16";
+  ctx.fillStyle = "#E6E6E6";
+  ctx.fillText("Corona-Invaders", 260, 100);
+
+  ctx.font = "30px DotGothic16";
+  ctx.fillStyle = "#D8D8D8";
+  ctx.fillText("Press 'Enter' to play", 100, 350);
+
+  ctx.font = "20px DotGothic16";
+  ctx.fillStyle = "#D8D8D8";
+  ctx.fillText("Press 'Space' to fire", 100, 400);
+
+  ctx.font = "20px DotGothic16";
+  ctx.fillStyle = "#D8D8D8";
+  ctx.fillText("Press 'Left' to go left", 100, 430);
+
+  ctx.font = "20px DotGothic16";
+  ctx.fillStyle = "#D8D8D8";
+  ctx.fillText("Press 'Right' to go right", 100, 460);
+
+  ctx.drawImage(gotinha, 600, 200);
 }
 
 window.onload = () => {
+  draw();
   document.addEventListener("keydown", (event) => {
     if (event.code === "Enter") {
       startGame();
+      sound.play();
     }
   });
 };

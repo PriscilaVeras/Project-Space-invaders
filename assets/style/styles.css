@@ -1,17 +1,20 @@
 * {
-  font-family: "Russo one";
+  /* font-family: "Russo one";*/
+  font-family: "DotGothic16", sans-serif;
 }
 
 body {
   text-align: center;
   margin-top: 5vw;
-  /*background-image: url(../images/bg.jpeg);*/
-  background-color: rgba(28, 26, 26, 0.482);
-  font-family: "Russo One", sans-serif;
+  background-image: url(../images/bg.jpeg);
+
+  /* font-family: "Russo One", sans-serif; */
+  font-family: "DotGothic16", sans-serif;
 }
 
 canvas {
-  border: solid 1px rgb(152, 55, 55);
+  border: solid 1px rgba(152, 55, 55, 0.351);
+  background-color: rgba(0, 0, 0, 0.831);
 }
 
 /* #start-button {
