@@ -6,7 +6,8 @@
 Corona-Invaders is a version of the classic Space-Invaders. 
 
 ## So what is the story?
-Space Invaders is a fixed shooter in which the player moves a laser cannon horizontally across the bottom of the screen and fires at invaders overhead.
+Space Invaders is a game made of a fixed shooter. 
+The player moves horizontally across the bottom of the screen a laser cannon in form of a vaccine syringe, which fires laser bullets at the corona virus invaders. The target is to kill the corona virus.
 
 ## Play now!
 For to play [Link here](https://priscilaveras.github.io/Project-Space-invaders/)
