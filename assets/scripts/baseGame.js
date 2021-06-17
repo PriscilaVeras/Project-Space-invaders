@@ -23,7 +23,6 @@ class Game {
 
     this.updateShootis();
 
-    //this.createInvaBos();
     this.checkExplosion();
     this.updateMoveInvaders();
     this.frames++;

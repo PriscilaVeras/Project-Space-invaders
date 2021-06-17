@@ -4,49 +4,46 @@ const ctx = canvas.getContext("2d");
 // Images
 
 const bgImg = new Image();
-bgImg.src = "./images/map-mundi.jpeg";
+bgImg.src = "./assets/images/map-mundi.jpeg";
 
 const shipSy = new Image();
-shipSy.src = "./images/seringa-01.png";
+shipSy.src = "./assets/images/seringa-01.png";
 
 const inva1 = new Image();
-inva1.src = "./images/virus-02.png";
+inva1.src = "./assets/images/virus-02.png";
 
 const inva2 = new Image();
-inva2.src = "./images/virus-03.png";
+inva2.src = "./assets/images/virus-03.png";
 
 const inva3 = new Image();
-inva3.src = "./images/virus-04.png";
+inva3.src = "./assets/images/virus-04.png";
 
 const gotinha = new Image();
-gotinha.src = "./images/zegotinha.png";
+gotinha.src = "./assets/images/zegotinha.png";
 
 const gotinhaHappy = new Image();
-gotinhaHappy.src = "./images/zegotinha-happy.png";
+gotinhaHappy.src = "./assets/images/zegotinha-happy.png";
 
 const shoot = new Image();
-shoot.src = "./images/shoot.png";
+shoot.src = "./assets/images/shoot.png";
 
 const nameGame = new Image();
-nameGame.src = "./images/nome.png";
-
-const invaBos = new Image();
-invaBos.src = "./images/virusnaro.png";
+nameGame.src = "./assets/images/nome.png";
 
 const sound = new Audio();
-sound.src = "./sounds/Medicine.mp3";
+sound.src = "./assets/sounds/Medicine.mp3";
 sound.volume = 0.1;
 
 const audioShoot = new Audio();
-audioShoot.src = "./sounds/shoot.ogg";
+audioShoot.src = "./assets/sounds/shoot.ogg";
 audioShoot.volume = 0.1;
 
 const audioExplosion = new Audio();
-audioExplosion.src = "./sounds/explosion.wav";
+audioExplosion.src = "./assets/sounds/explosion.wav";
 audioExplosion.volume = 0.1;
 
 const audioVacina = new Audio();
-audioVacina.src = "./sounds/vacinapo.mp3";
+audioVacina.src = "./assets/sounds/vacinapo.mp3";
 audioVacina.volume = 0.1;
 
 const imagesInvas = [inva1, inva2, inva3];
