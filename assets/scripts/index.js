@@ -21,8 +21,17 @@ inva3.src = "./images/virus-04.png";
 const gotinha = new Image();
 gotinha.src = "./images/zegotinha.png";
 
+const gotinhaHappy = new Image();
+gotinhaHappy.src = "./images/zegotinha-happy.png";
+
 const shoot = new Image();
 shoot.src = "./images/shoot.png";
+
+const nameGame = new Image();
+nameGame.src = "./images/nome.png";
+
+const invaBos = new Image();
+invaBos.src = "./images/virusnaro.png";
 
 const sound = new Audio();
 sound.src = "./sounds/Medicine.mp3";
@@ -35,6 +44,10 @@ audioShoot.volume = 0.1;
 const audioExplosion = new Audio();
 audioExplosion.src = "./sounds/explosion.wav";
 audioExplosion.volume = 0.1;
+
+const audioVacina = new Audio();
+audioVacina.src = "./sounds/vacinapo.mp3";
+audioVacina.volume = 0.1;
 
 const imagesInvas = [inva1, inva2, inva3];
 const font = "DotGothic16";
@@ -49,7 +62,7 @@ function startGame() {
     bgImg
   );
 
-  const player = new Objects(400, 490, 120, 60, shipSy);
+  const player = new Objects(400, 515, 120, 60, shipSy);
 
   const game = new Game(backgroundImage, player);
 
@@ -74,27 +87,25 @@ function startGame() {
   });
 }
 function draw() {
-  ctx.font = "70px DotGothic16";
-  ctx.fillStyle = "#E6E6E6";
-  ctx.fillText("Corona-Invaders", 260, 100);
+  ctx.drawImage(nameGame, 180, 10, 700, 230);
 
   ctx.font = "30px DotGothic16";
   ctx.fillStyle = "#D8D8D8";
-  ctx.fillText("Press 'Enter' to play", 100, 350);
+  ctx.fillText("'Enter' para jogar", 100, 400);
 
   ctx.font = "20px DotGothic16";
   ctx.fillStyle = "#D8D8D8";
-  ctx.fillText("Press 'Space' to fire", 100, 400);
+  ctx.fillText("'Espaço' para atirar", 100, 490);
 
   ctx.font = "20px DotGothic16";
   ctx.fillStyle = "#D8D8D8";
-  ctx.fillText("Press 'Left' to go left", 100, 430);
+  ctx.fillText("'Esquerda' para ir para esquerda", 100, 520);
 
   ctx.font = "20px DotGothic16";
   ctx.fillStyle = "#D8D8D8";
-  ctx.fillText("Press 'Right' to go right", 100, 460);
+  ctx.fillText("'Direita' para ir pra direita", 100, 550);
 
-  ctx.drawImage(gotinha, 600, 200);
+  ctx.drawImage(gotinha, 700, 300, 180, 250);
 }
 
 window.onload = () => {

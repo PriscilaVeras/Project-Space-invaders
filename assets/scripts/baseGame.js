@@ -23,6 +23,7 @@ class Game {
 
     this.updateShootis();
 
+    //this.createInvaBos();
     this.checkExplosion();
     this.updateMoveInvaders();
     this.frames++;
@@ -54,18 +55,17 @@ class Game {
   };
 
   updateMoveInvaders = () => {
-    this.allInvaders.forEach((invader, idx) => {
-      if (invader.speedX < 2 && idx < 40) {
-        invader.speedX += 1;
-      } else if (invader.speedX > 2 && idx < 40) {
-        invader.speedX -= 2;
-      }
-    });
+    this.allInvaders.forEach((invader) => {
+      console.log(invader.xAbsolute - invader.x);
 
-    // this.allInvaders.map((invader) => {
-    //   invader.updatePosition();
-    //   this.speedX += 2;
-    // });
+      if (invader.xAbsolute - invader.x === -50) {
+        invader.speedX = -1;
+      } else if (invader.xAbsolute - invader.x === 50) {
+        invader.speedX = 1;
+      }
+
+      invader.updatePosition();
+    });
   };
 
   updateShootis = () => {
@@ -76,32 +76,50 @@ class Game {
   };
 
   checkExplosion = () => {
+    let arrAux = [];
     for (let i = 0; i < this.shoots.length; i++) {
       for (let j = 0; j < this.allInvaders.length; j++) {
         if (this.shoots[i].crashWith(this.allInvaders[j])) {
           this.allInvaders.splice(j, 1);
+          arrAux.push(i);
           audioExplosion.play();
         }
       }
     }
+    this.shoots = this.shoots.filter((el, i) => arrAux.indexOf(i) === -1);
   };
 
   checkGameOver = () => {
     if (this.allInvaders.length === 0) {
       cancelAnimationFrame(this.animationId);
       sound.pause();
+      audioVacina.play();
       this.gameOver();
     }
   };
 
   gameOver() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = "black";
+    ctx.fillStyle = "#1C1C1C";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-    ctx.fillStyle = "red";
-    ctx.font = "60px Verdana";
-    ctx.fillText("Stay safe!", 300, 200);
+    ctx.drawImage(gotinhaHappy, 720, 310, 170, 240);
+
+    ctx.fillStyle = "#DF01A5";
+    ctx.font = "40px DotGothic16";
+    ctx.fillText("Foi bom ganhar do virus, né?!", 200, 170);
+
+    ctx.fillStyle = "#DF01A5";
+    ctx.font = "40px DotGothic16";
+    ctx.fillText("Se puder, fique em casa!", 210, 260);
+
+    ctx.fillStyle = "#DF01A5";
+    ctx.font = "40px DotGothic16";
+    ctx.fillText("Vem vacina!", 210, 350);
+
+    ctx.fillStyle = "#DF01A5";
+    ctx.font = "20px DotGothic16";
+    ctx.fillText("wee!", 790, 300);
   }
 
   clear = () => {

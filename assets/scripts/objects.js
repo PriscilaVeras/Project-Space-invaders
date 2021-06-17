@@ -61,7 +61,7 @@ class Invaders extends Objects {
   constructor(x, y, width, height, img) {
     super(x, y, width, height, img);
     this.speedX = 1;
-    this.speedY = 1;
+    this.xAbsolute = x;
   }
   draw() {
     ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
@@ -71,6 +71,12 @@ class Invaders extends Objects {
 // tiro
 
 class Shooter extends Objects {
+  constructor(x, y, width, height, img) {
+    super(x, y, width, height, img);
+  }
+}
+
+class InvaBos extends Objects {
   constructor(x, y, width, height, img) {
     super(x, y, width, height, img);
   }
